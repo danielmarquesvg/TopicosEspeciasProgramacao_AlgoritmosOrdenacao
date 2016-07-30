@@ -47,21 +47,21 @@ public class AlgoritmosDeOrdenacao {
 	}
 
 	// MÉTODO MERGE SORT
-	public int[] mergeSort(int[] arrayEntrada, int p, int r) {
+	public int[] mergeSort(int[] arrayEntrada, int p, int r, int place) {
 
 		int q;
 		if (p < r) {
 			q = (int) Math.floor((p + r) / 2);
-			mergeSort(arrayEntrada, p, q);
-			mergeSort(arrayEntrada, q + 1, r);
-			megeSortIntercala(arrayEntrada, p, q, r);
+			mergeSort(arrayEntrada, p, q, place);
+			mergeSort(arrayEntrada, q + 1, r, place);
+			mergeSortIntercala(arrayEntrada, p, q, r, place);
 		}
 		return arrayEntrada;
 
 	}
 	
 
-	public int[] megeSortIntercala(int[] arrayEntrada, int p, int q, int r) {
+	public int[] mergeSortIntercala(int[] arrayEntrada, int p, int q, int r, int place) {
 
 		int n = q - p + 1;
 		int m = r - q;
@@ -85,7 +85,7 @@ public class AlgoritmosDeOrdenacao {
 		j = 0;
 		for (k = p; k <= r; k++) {
 
-			if (L[i] <= R[j]) {
+			if (getDigit(L[i], place) <= getDigit(R[j], place)) {
 				arrayEntrada[k] = L[i];
 				i = i + 1;
 			} else {

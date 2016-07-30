@@ -145,7 +145,6 @@ public class Main {
 		arrayDeTempos[2][0][2] = analisador.analisarCountingSort(arrayAuxiliar2000, 1999);
 		System.out.print(arrayDeTempos[2][0][2] + " ns\n");
 
-		
 		// ARRAY ORDENADO DECRESCENTE
 		System.out.print("CountingSort Ordenado Decrescente \t");
 		arrayAuxiliar20 = array20_ordenadoDecrescente.clone();
@@ -160,7 +159,6 @@ public class Main {
 		arrayDeTempos[2][1][2] = analisador.analisarCountingSort(arrayAuxiliar2000, 1999);
 		System.out.print(arrayDeTempos[2][1][2] + " ns\n");
 
-		
 		// ARRAY ALEATORIO
 		System.out.print("CountingSort Aleatório \t\t\t");
 		arrayAuxiliar20 = array20_ordenadoAleatorio.clone();
@@ -173,7 +171,54 @@ public class Main {
 
 		arrayAuxiliar2000 = array20_ordenadoAleatorio.clone();
 		arrayDeTempos[2][2][2] = analisador.analisarCountingSort(arrayAuxiliar2000, 1999);
-		System.out.print(arrayDeTempos[2][2][2] + " ns\n");
+		System.out.print(arrayDeTempos[2][2][2] + " ns\n\n");
+
+		/*
+		 * ORDENANDO COM O MERGE SORT
+		 * ---------------------------------------------------------------------
+		 */
+
+		// ARRAY ORDENADO CRESCENTE
+		System.out.print("MergeSort Ordenado Crescente \t");
+		arrayAuxiliar20 = array20_ordenadoCrescente.clone();
+		arrayDeTempos[3][0][0] = analisador.analisarMergeSort(arrayAuxiliar20, 0, 19);
+		System.out.print(arrayDeTempos[3][0][0] + " ns\t\t");
+
+		arrayAuxiliar200 = array200_ordenadoCrescente.clone();
+		arrayDeTempos[3][0][1] = analisador.analisarMergeSort(arrayAuxiliar200, 0, 199);
+		System.out.print(arrayDeTempos[3][0][1] + " ns\t\t");
+
+		arrayAuxiliar2000 = array2000_ordenadoCrescente.clone();
+		arrayDeTempos[3][0][2] = analisador.analisarMergeSort(arrayAuxiliar2000, 0, 1999);
+		System.out.print(arrayDeTempos[3][0][2] + " ns\n");
+
+		// ARRAY ORDENADO DECRESCENTE
+		System.out.print("MergeSort Ordenado Decrescente \t");
+		arrayAuxiliar20 = array20_ordenadoDecrescente.clone();
+		arrayDeTempos[3][1][0] = analisador.analisarMergeSort(arrayAuxiliar20, 0, 19);
+		System.out.print(arrayDeTempos[3][1][0] + " ns\t\t");
+
+		arrayAuxiliar200 = array200_ordenadoDecrescente.clone();
+		arrayDeTempos[3][1][1] = analisador.analisarMergeSort(arrayAuxiliar200, 0, 199);
+		System.out.print(arrayDeTempos[3][1][1] + " ns\t\t");
+
+		arrayAuxiliar2000 = array2000_ordenadoDecrescente.clone();
+		arrayDeTempos[3][1][2] = analisador.analisarMergeSort(arrayAuxiliar2000, 0, 1999);
+		System.out.print(arrayDeTempos[3][1][2] + " ns\n");
+
+		// ARRAY ALEATORIO
+		System.out.print("MergeSort Aleatório \t\t\t");
+		arrayAuxiliar20 = array20_ordenadoAleatorio.clone();
+		arrayDeTempos[3][2][0] = analisador.analisarMergeSort(arrayAuxiliar20, 0, 19);
+		System.out.print(arrayDeTempos[3][2][0] + " ns\t\t");
+
+		arrayAuxiliar200 = array20_ordenadoAleatorio.clone();
+		arrayDeTempos[3][2][1] = analisador.analisarMergeSort(arrayAuxiliar200, 0, 199);
+		System.out.print(arrayDeTempos[3][2][1] + " ns\t\t");
+
+		arrayAuxiliar2000 = array20_ordenadoAleatorio.clone();
+		arrayDeTempos[3][2][2] = analisador.analisarMergeSort(arrayAuxiliar2000, 0, 1999);
+		System.out.print(arrayDeTempos[3][2][2] + " ns\n");
 
 	}
 
