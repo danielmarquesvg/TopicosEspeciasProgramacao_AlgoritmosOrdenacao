@@ -34,6 +34,8 @@ public class Main {
 
 		/*
 		 * ORDENANDO COM O BUBBLE SORT
+		 * ---------------------------------------------------------------------
+		 * -------
 		 */
 
 		// ARRAY ORDENADO CRESCENTE
@@ -76,7 +78,54 @@ public class Main {
 
 		arrayAuxiliar2000 = array2000_ordenadoAleatorio.clone();
 		arrayDeTempos[0][2][2] = analisador.analisarBubbleSort(arrayAuxiliar2000);
-		System.out.print(arrayDeTempos[0][2][2] + " ns\n");
+		System.out.print(arrayDeTempos[0][2][2] + " ns\n\n");
+
+		/*
+		 * ORDENANDO COM O INSERTION SORT
+		 * ---------------------------------------------------------------------
+		 */
+
+		// ARRAY ORDENADO CRESCENTE
+		System.out.print("InsertionSort Ordenado Crescente \t");
+		arrayAuxiliar20 = array20_ordenadoCrescente.clone();
+		arrayDeTempos[1][0][0] = analisador.analisarInsertionSort(arrayAuxiliar20);
+		System.out.print(arrayDeTempos[1][0][0] + " ns\t\t");
+
+		arrayAuxiliar200 = array200_ordenadoCrescente.clone();
+		arrayDeTempos[1][0][1] = analisador.analisarInsertionSort(arrayAuxiliar200);
+		System.out.print(arrayDeTempos[1][0][1] + " ns\t\t");
+
+		arrayAuxiliar2000 = array2000_ordenadoCrescente.clone();
+		arrayDeTempos[1][0][2] = analisador.analisarInsertionSort(arrayAuxiliar2000);
+		System.out.print(arrayDeTempos[1][0][2] + " ns\n");
+
+		// ARRAY ORDENADO DECRESCENTE
+		System.out.print("InsertionSort Ordenado Decrescente \t");
+		arrayAuxiliar20 = array20_ordenadoDecrescente.clone();
+		arrayDeTempos[1][1][0] = analisador.analisarInsertionSort(arrayAuxiliar20);
+		System.out.print(arrayDeTempos[1][1][0] + " ns\t\t");
+
+		arrayAuxiliar200 = array200_ordenadoCrescente.clone();
+		arrayDeTempos[1][1][1] = analisador.analisarInsertionSort(arrayAuxiliar200);
+		System.out.print(arrayDeTempos[1][1][1] + " ns\t\t");
+
+		arrayAuxiliar2000 = array2000_ordenadoCrescente.clone();
+		arrayDeTempos[1][1][2] = analisador.analisarInsertionSort(arrayAuxiliar2000);
+		System.out.print(arrayDeTempos[1][1][2] + " ns\n");
+
+		// ARRAY ALEATÓRIO
+		System.out.print("InsertionSort Aletório \t\t\t");
+		arrayAuxiliar20 = array20_ordenadoDecrescente.clone();
+		arrayDeTempos[1][2][0] = analisador.analisarInsertionSort(arrayAuxiliar20);
+		System.out.print(arrayDeTempos[1][2][0] + " ns\t\t");
+
+		arrayAuxiliar200 = array200_ordenadoCrescente.clone();
+		arrayDeTempos[1][2][1] = analisador.analisarInsertionSort(arrayAuxiliar200);
+		System.out.print(arrayDeTempos[1][2][1] + " ns\t\t");
+
+		arrayAuxiliar2000 = array2000_ordenadoCrescente.clone();
+		arrayDeTempos[1][2][2] = analisador.analisarInsertionSort(arrayAuxiliar2000);
+		System.out.print(arrayDeTempos[1][2][2] + " ns\n");
 
 	}
 

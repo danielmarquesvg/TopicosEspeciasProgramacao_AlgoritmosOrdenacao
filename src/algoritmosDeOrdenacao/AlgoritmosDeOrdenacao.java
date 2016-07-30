@@ -30,12 +30,12 @@ public class AlgoritmosDeOrdenacao {
 	}
 
 	// MÉTODO INSERTION SORT
-	public static int[] insertionSort(int[] lista) {
+	public static int[] insertionSort(int[] lista, int place) {
 
 		for (int i = 1; i < lista.length; i++) {
 			int variavelAuxiliar = lista[i];
 			int j = i;
-			while (j > 0 && lista[j - 1] > variavelAuxiliar) {
+			while (j > 0 && getDigit(lista[j - 1], place) > getDigit(variavelAuxiliar, place)) {
 				lista[j] = lista[j - 1];
 				j = j - 1;
 			}
