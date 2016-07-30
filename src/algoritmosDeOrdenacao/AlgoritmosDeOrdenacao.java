@@ -1,16 +1,23 @@
 package algoritmosDeOrdenacao;
 
 public class AlgoritmosDeOrdenacao {
+	
+	private static int getDigit(int value, int digitPlace) {
+		return ((value / digitPlace) % 10);
+	}
 
 	// MÉTODO BUBBLE SORT
-	public static int[] bubbleSort(int[] lista) {
+	public int[] bubbleSort(int[] lista, int place) {
 
 		boolean houveTroca = true;
 
 		while (houveTroca == true) {
 			houveTroca = false;
 			for (int i = 0; i < (lista.length) - 1; i++) {
-				if (lista[i] > lista[i + 1]) {
+				int digito1 = getDigit(lista[i], place);
+				int digito2 = getDigit(lista[i+1], place);
+				
+				if (digito1 > digito2) {
 					int variavelAuxiliar = lista[i + 1];
 					lista[i + 1] = lista[i];
 					lista[i] = variavelAuxiliar;
