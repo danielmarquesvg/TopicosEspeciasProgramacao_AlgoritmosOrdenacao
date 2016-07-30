@@ -98,17 +98,19 @@ public class AlgoritmosDeOrdenacao {
 	}
 
 	// MÉTODO COUNTING SORT
-	public int[] countingSort(int[] arrayA, int k) {
+	public int[] countingSort(int[] arrayA, int k, int place) {
 
 		int[] arrayB = new int[arrayA.length];
 		int[] arrayC = new int[k + 1];
+		int digito;
 
 		for (int i = 1; i <= k; i++) {
 			arrayC[i] = 0;
 		}
 
 		for (int j = 0; j < arrayA.length; j++) {
-			arrayC[arrayA[j]] = arrayC[arrayA[j]] + 1;
+			digito = getDigit(arrayA[j], place);
+			arrayC[digito] = arrayC[digito] + 1;
 		}
 
 		for (int i = 1; i < k + 1; i++) {
@@ -116,8 +118,10 @@ public class AlgoritmosDeOrdenacao {
 		}
 
 		for (int j = (arrayA.length - 1); j >= 0; j--) {
-			arrayB[arrayC[arrayA[j]] - 1] = arrayA[j];
-			arrayC[arrayA[j]] = arrayC[arrayA[j]] - 1;
+			digito = getDigit(arrayA[j], place);
+			
+			arrayB[arrayC[digito] - 1] = arrayA[j];
+			arrayC[digito] = arrayC[digito] - 1;
 		}
 		return arrayB;
 
