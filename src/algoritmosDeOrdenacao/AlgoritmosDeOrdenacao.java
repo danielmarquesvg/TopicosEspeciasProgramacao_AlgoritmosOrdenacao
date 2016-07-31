@@ -47,6 +47,42 @@ public class AlgoritmosDeOrdenacao {
 	}
 
 	// MÉTODO MERGE SORT
+	public int[] megeSortIntercala(int[] arrayEntrada, int p, int q, int r, int place) {
+
+		int n = q - p + 1;
+        int m = r - q;
+
+        int L[] = new int[n + 1];
+        int R[] = new int[m + 1];
+        int i, j, k;
+
+        for(i = 0; i < n; i++){
+            L[i] = arrayEntrada[p + i];
+        }
+        
+        for(j=0; j< m; j++){
+            R[j] = arrayEntrada[q + j + 1];
+        }
+
+        L[n] = Integer.MAX_VALUE;
+        R[m] = Integer.MAX_VALUE;
+
+        i = 0;
+        j = 0;
+        for(k = p; k <= r; k++){
+
+        	if( getDigit(L[i], place) <= getDigit(R[j], place)){
+        		arrayEntrada[k] = L[i];
+        		i = i+1;
+        	} else {
+        		arrayEntrada[k] = R[j];
+        		j = j+1;
+        	}
+        }
+        
+		return arrayEntrada;
+	}
+
 	public int[] mergeSort(int[] arrayEntrada, int p, int r, int place) {
 
 		int q;
@@ -54,47 +90,10 @@ public class AlgoritmosDeOrdenacao {
 			q = (int) Math.floor((p + r) / 2);
 			mergeSort(arrayEntrada, p, q, place);
 			mergeSort(arrayEntrada, q + 1, r, place);
-			mergeSortIntercala(arrayEntrada, p, q, r, place);
+			megeSortIntercala(arrayEntrada, p, q, r, place);
 		}
 		return arrayEntrada;
 
-	}
-	
-
-	public int[] mergeSortIntercala(int[] arrayEntrada, int p, int q, int r, int place) {
-
-		int n = q - p + 1;
-		int m = r - q;
-
-		int L[] = new int[n + 1];
-		int R[] = new int[m + 1];
-		int i, j, k;
-
-		for (i = 0; i < n; i++) {
-			L[i] = arrayEntrada[p + i];
-		}
-
-		for (j = 0; j < m; j++) {
-			R[j] = arrayEntrada[q + j + 1];
-		}
-
-		L[n] = Integer.MAX_VALUE;
-		R[m] = Integer.MAX_VALUE;
-
-		i = 0;
-		j = 0;
-		for (k = p; k <= r; k++) {
-
-			if (getDigit(L[i], place) <= getDigit(R[j], place)) {
-				arrayEntrada[k] = L[i];
-				i = i + 1;
-			} else {
-				arrayEntrada[k] = R[j];
-				j = j + 1;
-			}
-		}
-
-		return arrayEntrada;
 	}
 
 	// MÉTODO COUNTING SORT
